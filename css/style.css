@@ -12,22 +12,9 @@ body, html {
 	background-position: center center;
 	background-color: black;
 }
-
-#anuncio {
-	z-index: 100;
-	top: 0;
-}
 /* INDEX */
 
 /* CONFIG GERAIS */
-body::-webkit-scrollbar {
-    width: 0;
-}
-
-body::-webkit-scrollbar-horizontal {
-    height: 0;
-}
-
 .iframe {
 	position: absolute;
 	width: 100%;
@@ -37,15 +24,6 @@ body::-webkit-scrollbar-horizontal {
 	border: none;
 	padding: 0;
 	margin: 0;
-}
-
-.dropdown-menu {
-	max-height: 50vh;
-	overflow-y: auto;
-}
-
-.dropdown-menu::-webkit-scrollbar {
-	width: 0;
 }
 
 @media (width < 1200px) {
@@ -59,3 +37,61 @@ body::-webkit-scrollbar-horizontal {
 	}
 }
 /* CONFIG GERAIS */
+
+/* BOTAO DE CONTATO */
+.icons {
+	display: flex;
+	column-gap: 25px;
+}
+
+.icon {
+	display: inline-flex;
+	width: 60px;
+	height: 60px;
+	text-decoration: none;
+	font-size: 26px;
+	color: black;
+	border-radius: 50%;
+	outline: 2px solid black;
+	transition-property: outline-offset, outline-color, background-color;
+	transition-duration: 0.25s;
+}
+
+.icon:hover {
+	color: white;
+	outline-offset: 4px;
+}
+
+.icon i {
+	margin: auto;
+}
+
+.icon:hover i {
+	animation: shake 0.25s;
+}
+
+.icon--linkedin:hover {
+	background-color: #0A66C2;
+	outline-color: #0A66C2;
+}
+
+.icon--github:hover {
+	background-color: black;
+	outline-color: black;
+}
+
+@keyframes shake {
+	10% {
+		transform: rotate(15deg);
+	}
+	20% {
+		transform: rotate(-15deg);
+	}
+	30% {
+		transform: rotate(15deg);
+	}
+	40% {
+		transform: rotate(-15deg);
+	}
+}
+/* BOTAO DE CONTATO */
