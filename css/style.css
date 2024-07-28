@@ -95,3 +95,36 @@ body, html {
 	}
 }
 /* BOTAO DE CONTATO */
+
+/* TELA DE LOAD */
+.load {
+	background-color: rgba(0, 0, 0, 0.5);
+	width: 100vw;
+	height: 100vh;
+}
+
+.imgLoad {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 90vw;
+	opacity: 0;
+	animation: load 2s;
+}
+
+@keyframes load {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@media (width > 1200px) {
+	.imgLoad {
+		width: 30vw;
+	}
+}
+/* TELA DE LOAD */
