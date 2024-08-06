@@ -9,7 +9,7 @@ fetch("https://api-7-circuito-badbons-open.onrender.com/tabela" + "?categoria=" 
 	for(let i = 0; i < table.length; i++) {
 		document.getElementById("table").innerHTML += `
 			<tr>
-				<th scope="row">${i}</th>
+				<th scope="row">${i + 1}</th>
 				<td>${table[i].nome}</td>
 				<td>${table[i].tj}</td>
 				<td>${table[i].v}</td>
