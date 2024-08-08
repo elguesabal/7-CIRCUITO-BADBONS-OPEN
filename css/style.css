@@ -142,3 +142,9 @@ body, html {
 	font-size: 0.9rem;
 }
 /* TABELA */
+
+/* ADM */
+#botaoAdm {
+	display: none;
+}
+/* ADM */
