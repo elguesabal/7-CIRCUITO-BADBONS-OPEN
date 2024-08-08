@@ -128,3 +128,17 @@ body, html {
 	}
 }
 /* TELA DE LOAD */
+
+/* TABELA */
+.width30 {
+	width: 30vw;
+}
+
+.width10 {
+	width: 10vw;
+}
+
+.textTable {
+	font-size: 0.9rem;
+}
+/* TABELA */
