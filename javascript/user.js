@@ -18,22 +18,22 @@ export default function jogosUser(url) {
 					<tbody>
 						<tr>
 							<td class="align-middle textTable ${atleta1} bg-opacity-25" rowspan="3">${jogos[i].nome1}</td>
-							<td class="${atleta1} bg-opacity-25">${jogos[i].set1_1}</td>
-							<td class="${atleta2} bg-opacity-25">${jogos[i].set1_2}</td>
+							<td class="${atleta1} hCelula bg-opacity-25">${(jogos[i].set1_1 == 0) ? "" : jogos[i].set1_1}</td>
+							<td class="${atleta2} hCelula bg-opacity-25">${(jogos[i].set1_2 == 0) ? "" : jogos[i].set1_2}</td>
 							<td class="align-middle textTable ${atleta2} bg-opacity-25" rowspan="3">${jogos[i].nome2}</td>
 						</tr>
 						<tr>
-							<td class="${atleta1} bg-opacity-25">${jogos[i].set2_1}</td>
-							<td class="${atleta2} bg-opacity-25">${jogos[i].set2_2}</td>
+							<td class="${atleta1} hCelula bg-opacity-25">${(jogos[i].set2_1 == 0) ? "" : jogos[i].set2_1}</td>
+							<td class="${atleta2} hCelula bg-opacity-25">${(jogos[i].set2_2 == 0) ? "" : jogos[i].set2_2}</td>
 						</tr>
 						<tr>
-							<td class="${atleta1} bg-opacity-25">${jogos[i].set3_1}</td>
-							<td class="${atleta2} bg-opacity-25">${jogos[i].set3_2}</td>
+							<td class="${atleta1} hCelula bg-opacity-25">${(jogos[i].set3_1 == 0) ? "" : jogos[i].set3_1}</td>
+							<td class="${atleta2} hCelula bg-opacity-25">${(jogos[i].set3_2 == 0) ? "" : jogos[i].set3_2}</td>
 						</tr>
 					</tbody>
 				</table>
 			`;
 		}
 	})
-	.catch(error => console.log("Error na tabela", error))
+	.catch(error => console.log("Error na tabela", error));
 }

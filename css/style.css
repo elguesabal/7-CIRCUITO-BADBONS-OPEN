@@ -141,10 +141,21 @@ body, html {
 .textTable {
 	font-size: 0.9rem;
 }
+
+.hCelula {
+	height: 9vh;
+	vertical-align: middle;
+}
 /* TABELA */
 
 /* ADM */
 #botaoAdm {
 	display: none;
+}
+
+.enviando {
+	background-color: rgba(0, 0, 0, 0.5);
+	width: 100vw;
+	height: 100vh;
 }
 /* ADM */

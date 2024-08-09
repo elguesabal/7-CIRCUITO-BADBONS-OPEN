@@ -5,8 +5,8 @@ export default function jogosAdm(url) {
 	.then(res => { return res.json(); })
 	.then(jogos => {
 		for(let i = 0; i < jogos.length; i++) {
-			const atleta1 = (jogos[i].v == "1") ? "bg-success" : (jogos[i].v == "0") ? "" : "bg-danger" ;
-			const atleta2 = (jogos[i].v == "2") ? "bg-success" : (jogos[i].v == "0") ? "" : "bg-danger" ;
+			const atleta1 = (jogos[i].v == 1) ? "bg-success" : (jogos[i].v == 0) ? "" : "bg-danger" ;
+			const atleta2 = (jogos[i].v == 2) ? "bg-success" : (jogos[i].v == 0) ? "" : "bg-danger" ;
 			document.getElementById("jogos").innerHTML += `
 				<table class="table table-bordered border-primary text-center">
 					<thead>
@@ -58,14 +58,14 @@ function novosPlacares() {
 
 	for(let i = 0; i < lenChild.childElementCount; i++) {
 		const nome1 = document.getElementById(`jogo${i}Nome1`).textContent;
-		const set1_1 = document.getElementById(`jogo${i}Set1_1`).value;
-		const set2_1 = document.getElementById(`jogo${i}Set2_1`).value;
-		const set3_1 = document.getElementById(`jogo${i}Set3_1`).value;
+		const set1_1 = Number(document.getElementById(`jogo${i}Set1_1`).value);
+		const set2_1 = Number(document.getElementById(`jogo${i}Set2_1`).value);
+		const set3_1 = Number(document.getElementById(`jogo${i}Set3_1`).value);
 
 		const nome2 = document.getElementById(`jogo${i}Nome2`).textContent;
-		const set1_2 = document.getElementById(`jogo${i}Set1_2`).value;
-		const set2_2 = document.getElementById(`jogo${i}Set2_2`).value;
-		const set3_2 = document.getElementById(`jogo${i}Set3_2`).value;
+		const set1_2 = Number(document.getElementById(`jogo${i}Set1_2`).value);
+		const set2_2 = Number(document.getElementById(`jogo${i}Set2_2`).value);
+		const set3_2 = Number(document.getElementById(`jogo${i}Set3_2`).value);
 
 		const sets = (set1_1 == 0 && set1_2 == 0) ? 0 : (set3_1 == 0 && set3_2 == 0) ? 2 : 3 ;
 		const v = vitoria(sets, set1_1, set2_1, set3_1, set1_2, set2_2, set3_2);
@@ -81,5 +81,13 @@ function novosPlacares() {
 }
 
 function enviar() {
-	novosPlacares();
+	const url = new URL(window.location.href);
+
+	fetch("http://192.168.0.110:3000/adm/jogos/" + url.searchParams.get("categoria") + "/" + url.searchParams.get("modalidade"), {
+		method: "PUT",
+		headers: { "Content-Type": "application/json" },
+		body: JSON.stringify(novosPlacares())
+	})
+	.then(res => { return console.log(res.status); })
+	.catch(error => console.log("Error na tabela", error));
 }
