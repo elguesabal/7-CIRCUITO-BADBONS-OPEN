@@ -6,7 +6,7 @@ const modalidade = url.searchParams.get("modalidade");
 fetch("https://api-7-circuito-badbons-open.onrender.com/tabela" + "?categoria=" + categoria + "&modalidade=" + modalidade)
 .then(res => { return res.json(); })
 .then(table => {
-	table.sort((a, b) => b.v - a.v);
+	table.sort((a, b) => { return (b.v !== a.v) ? b.v - a.v : (b.pf - b.ps) - (a.pf - a.ps); });
 	for(let i = 0; i < table.length; i++) {
 		document.getElementById("table").innerHTML += `
 			<tr>
