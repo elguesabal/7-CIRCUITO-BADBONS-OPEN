@@ -176,4 +176,16 @@ body, html {
 	font-size: 5rem;
 	color: red;
 }
+
+#loadSenha {
+	background-color: white;
+	display: none;
+}
+
+.formSenha {
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
 /* ADM */

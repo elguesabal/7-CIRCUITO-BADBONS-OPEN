@@ -1,6 +1,8 @@
 export default function jogosAdm(url) {
 	document.getElementById("botaoAdm").style.display = "block";
+	document.getElementById("loadSenha").style.display = "block";
 	document.getElementById("botaoAdm").addEventListener("click", () => enviar());
+	document.getElementById("formSenha").addEventListener("submit", (event) => senhaAdm(event));
 	fetch(url)
 	.then(res => { return res.json(); })
 	.then(jogos => {
@@ -96,4 +98,9 @@ function enviar() {
 		(res.status == 200) ? load.style.display = "none" : spinner.innerHTML = "Error";
 	})
 	.catch(error => console.log("Error na tabela", error));
+}
+
+function senhaAdm(event) {
+	event.preventDefault();
+	(document.getElementById("senha").value == "123") ? document.getElementById("loadSenha").style.display = "none" : undefined;
 }
