@@ -82,12 +82,17 @@ function novosPlacares() {
 
 function enviar() {
 	const url = new URL(window.location.href);
+	const load = document.getElementById("loadAdm");
+	const spinner = document.getElementById("spinner");
 
+	load.style.display = "block";
 	fetch("http://192.168.0.110:3000/adm/jogos/" + url.searchParams.get("categoria") + "/" + url.searchParams.get("modalidade"), {
 		method: "PUT",
 		headers: { "Content-Type": "application/json" },
 		body: JSON.stringify(novosPlacares())
 	})
-	.then(res => { return console.log(res.status); })
+	.then(res => {
+		(res.status == 200) ? load.style.display = "none" : spinner.innerHTML = "Error";
+	})
 	.catch(error => console.log("Error na tabela", error));
 }
