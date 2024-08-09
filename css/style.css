@@ -80,6 +80,11 @@ body, html {
 	outline-color: black;
 }
 
+.icon--whatsapp:hover {
+	background-color: green;
+	outline-color: green;
+}
+
 @keyframes shake {
 	10% {
 		transform: rotate(15deg);
