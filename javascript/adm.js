@@ -89,6 +89,7 @@ function enviar() {
 
 	load.style.display = "block";
 	// fetch("http://192.168.0.110:3000/adm/jogos/" + url.searchParams.get("categoria") + "/" + url.searchParams.get("modalidade"), {
+	// fetch("http://127.0.0.1:3000/adm/jogos/" + url.searchParams.get("categoria") + "/" + url.searchParams.get("modalidade"), {
 	fetch("https://api-7-circuito-badbons-open.onrender.com/adm/jogos/" + url.searchParams.get("categoria") + "/" + url.searchParams.get("modalidade"), {
 		method: "PUT",
 		headers: { "Content-Type": "application/json" },
